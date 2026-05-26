@@ -16,3 +16,10 @@ if (choice <= 0.32) {
 }
 
 getComputerChoice
+
+
+//Human choice
+function getHumanChoice() {
+    return prompt('Select Rock, Paper, or Scissors');
+}
+console.log(getHumanChoice());
