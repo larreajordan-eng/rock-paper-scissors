@@ -3,9 +3,9 @@ function getComputerChoice() {
     const randomNumber = Math.random()
 
 
-if (randomNumber <= 0.32) {
+if (randomNumber <= 0.33) {
     return 'Rock';
-} else if (randomNumber <= 0.65 && choice >= 0.33) {
+} else if (randomNumber <= 0.66) {
     return 'Paper';
 } else {
     return 'Scissors';
@@ -16,12 +16,12 @@ if (randomNumber <= 0.32) {
 
 //Human choice
 function getHumanChoice() {
-    return prompt('Select Rock, Paper, or Scissors');
-}
-const human = getHumanChoice();
+const human = prompt ('Select Rock, Paper, or Scissors');
 const lowerHuman = human.toLowerCase();
 const humanChoiceCaseInsensitive = lowerHuman.charAt(0).toUpperCase() + lowerHuman.slice(1);
 console.log(humanChoiceCaseInsensitive);
+return humanChoiceCaseInsensitive;
+}
 
 
 //Score variables
@@ -56,3 +56,7 @@ function playRound(humanChoice, computerChoice) {
         break;
     }
 }
+
+const humanChoice = getComputerChoice();
+const computerChoice = getHumanChoice();
+playRound(humanChoice, computerChoice);
