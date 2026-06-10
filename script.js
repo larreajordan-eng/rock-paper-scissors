@@ -57,6 +57,37 @@ function playRound(humanChoice, computerChoice) {
     }
 }
 
-const humanChoice = getComputerChoice();
-const computerChoice = getHumanChoice();
+const humanChoice = getHumanChoice();
+const computerChoice = getComputerChoice();
 playRound(humanChoice, computerChoice);
+
+function playGame() {
+    humanScore = 0;
+    computerScore = 0;
+
+    console.log("Start the game, best of 5 wins.");
+
+    for (let i = 0; i<5; i++) {
+        console.log(`\n--- Round ${i+1} ---`);
+
+        const humanChoice = getHumanChoice();
+        const computerChoice = getComputerChoice();
+
+        console.log(`Computer Chose: ${computerChoice}`);
+
+        playRound(humanChoice, computerChoice);
+
+        console.log(`Score -> You: ${humanScore} | Computer: ${computerScore}`);
+    }
+
+    console.log("\n=== Game Over ===");
+    if (humanScore > computerScore) {
+        console.log('You won the Game! Final Score: ${humanScore} to ${computerScore}');
+    } else if (computerScore > humanScore) {
+        console.log('You lost the game. Final Score: ${humanScore} to ${computerScore}');
+    } else {
+        console.log(`It's a tie! Final Score: ${humanScore} to ${computerScore}`)
+    }
+}
+
+playGame();
